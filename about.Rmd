@@ -5,7 +5,10 @@ output:
     toc: false
     toc_float: true
 ---
-<br><img src="images/me.jpg" alt="me" style="width:50%; border:10px solid"><br>
+<center>
+<img src="images/me.jpg" alt="me" style="width:50%">
+</center>
+
 
 I am a public health student, researcher, and thinker with a particular interested in transgender community health. I am currently pursuing my Masters of Public Health in the Sociomedical Sciences department at Columbia University. My certificate is in Applied Biostatistics and Public Health Data Science. I also work as a research assistant for the [TURNNT](https://www.turnnt.com/) study.
 
