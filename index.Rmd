@@ -9,7 +9,7 @@ output:
 MPH Candidate '23 <br>
 Columbia University Mailman School of Public Health
 
-![](https://media.giphy.com/media/9tYDbz1fdQWImLUfZH/giphy.gif)
+![](https://media.giphy.com/media/n4HrDYr78CEFuXpGNp/giphy.gif)
 
 #### Welcome
 
@@ -18,3 +18,5 @@ Welcome to my website. I created this using R - so fun! Here, you can learn more
 Learn more about me [here](about.html).
 
 Learn more about my work [here](experience.html)
+
+See some plots I made [here](plotly.html)
