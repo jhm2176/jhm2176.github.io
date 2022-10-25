@@ -9,16 +9,12 @@ output:
 MPH Candidate '23 <br>
 Columbia University Mailman School of Public Health
 
+![](https://media.giphy.com/media/9tYDbz1fdQWImLUfZH/giphy.gif)
 
-![](https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif)
+#### Welcome
 
-#### About
-Here's some text. I like the internet. I use [google](https://google.com/) all the time to do data science.
+Welcome to my website. I created this using R - so fun! Here, you can learn more about me and my work.
 
-This is me:
+Learn more about me [here](about.html).
 
-![](images/me.jpeg)
-
-You can learn more about me [here](about.html).
-
-You can view my resume and other experience [here](experience.html)
+Learn more about my work [here](experience.html)

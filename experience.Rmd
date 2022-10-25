@@ -1,11 +1,21 @@
 ---
-title: "Academic and Professional Experience"
+title: "Experience"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-# Resume
+![](https://media.giphy.com/media/l0K4hO8mVvq8Oygjm/giphy.gif)
 
-Here is my experience.
+### Academic 
+
+Here is my academic experience.
+
+### Professional 
+
+Here is my professional experience.
+
+### Resume
+
+Here is a link to my [resume] (link).
