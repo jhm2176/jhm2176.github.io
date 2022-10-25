@@ -1,11 +1,11 @@
 ---
-title: "About this website"
+title: "About me"
 output: 
   html_document:
-    toc: true
+    toc: false
     toc_float: true
 ---
 
-# This is Jenesis's awesome website
-
 This awesome website is make in rmarkdown and other stuff.
+
+<br><img src="images/me.jpg" alt="me" style="width:65%; border:10px solid"><br>
