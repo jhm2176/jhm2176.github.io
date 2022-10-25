@@ -1,25 +1,20 @@
 ---
-title: "Plotly"
+title: "Dashboard"
 output: 
-  html_document:
-    toc: true
-    toc_float: true
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 
-We're going to make some plotly plots.
-
-## Load packages and data
-
-```{r}
+```{r setup, include=FALSE}
+library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
-
 library(plotly)
 ```
 
-Let's get some data.
 
-```{r}
+```{r data, include=FALSE}
 data("nyc_airbnb") 
 
 nyc_airbnb =
@@ -34,7 +29,10 @@ nyc_airbnb =
   drop_na(rating)
 ```
 
-Let's make a scatterplot with plotly!
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
 
 ```{r}
 nyc_airbnb %>%
@@ -47,7 +45,10 @@ nyc_airbnb %>%
     alpha = 0.5, text = ~text_label)
 ```
 
-Now onto boxplots!
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
 
 ```{r}
 nyc_airbnb %>%
@@ -56,8 +57,9 @@ nyc_airbnb %>%
     y = ~price, color = ~neighbourhood,
     type = "box", colors = "viridis")
 ```
- Bar graphs:
- 
+
+### Chart C
+
 ```{r}
 nyc_airbnb %>%
   count(neighbourhood) %>%
@@ -66,20 +68,4 @@ nyc_airbnb %>%
     x = ~neighbourhood, y = ~n, color = ~neighbourhood,
     type = "bar", colors = "viridis")
 ```
- 
-## ggplotly...
 
-It's usually best practice to plot with plot_ly directly, but ggplotly also exists and is good to know about to make ggplots more interactive. 
-
-```{r}
-ggp_scatterplot =
-  nyc_airbnb %>%
-  ggplot(aes(x = lat, y = long, color = price)) +
-  geom_point()
-
-ggplotly(ggp_scatterplot)
-```
-
-## Create a dashboard
-
-Not here though. Dashboards are their own page (see: dashboard.rmd)

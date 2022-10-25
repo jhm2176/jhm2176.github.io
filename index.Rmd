@@ -20,3 +20,5 @@ Learn more about me [here](about.html).
 Learn more about my work [here](experience.html)
 
 See some plots I made [here](plotly.html)
+
+And see my flexdashboard [here](dashboard.html)
