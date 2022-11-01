@@ -21,4 +21,4 @@ Learn more about my work [here](experience.html)
 
 See some plots I made [here](plotly.html)
 
-And see my flexdashboard [here](dashboard.html)
+And check out my flexdashboard [here](dashboard.html)

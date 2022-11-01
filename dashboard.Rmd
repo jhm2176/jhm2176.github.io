@@ -15,18 +15,13 @@ library(plotly)
 
 
 ```{r data, include=FALSE}
-data("nyc_airbnb") 
+data("instacart")
 
-nyc_airbnb =
-  nyc_airbnb %>%
-  mutate(rating = review_scores_location / 2) %>%
-  select(
-    borough = neighbourhood_group, neighbourhood, price, room_type, lat, long, rating) %>%
-  filter(
-    borough == "Manhattan",
-    room_type == "Entire home/apt",
-    price %in% 100:500) %>%
-  drop_na(rating)
+instacart =
+  instacart %>%
+  sample_n(500)
+
+#MAKE PLOTS FOR NON-AIR BNB DATA
 ```
 
 Column {data-width=650}
