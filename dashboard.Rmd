@@ -35,7 +35,7 @@ instacart %>%
   plot_ly(
     x = ~order_dow, y = ~orders, color = ~department,
     type = "scatter", mode = "lines+markers", colors = "viridis") %>%
-  layout(xaxis = list(title = 'Day of the week'))
+  layout(xaxis = list(title = 'day of the week'))
 ```
 
 Column {data-width=350}
@@ -59,5 +59,5 @@ instacart %>%
   plot_ly(
     y = ~order_hour_of_day, color = ~department,
     type = "box", colors = "viridis") %>%
-    layout(xaxis = list(title = 'Department'), yaxis = list(title = 'Order hour of day'))
+    layout(xaxis = list(title = 'department'), yaxis = list(title = 'order hour of day'))
 ```

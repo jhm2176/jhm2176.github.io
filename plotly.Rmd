@@ -6,7 +6,7 @@ output:
     toc_float: true
 ---
 
-We're going to make some plotly plots.
+This file is a combination of notes from lecture and my code for plots on my flexdashboard. Still, I am housing it in this project/repo since it was used to create my website, but this page itself will not be displayed online. Instead, I will use this code in the dashboard.rmd to build that page.
 
 ## Load packages and data
 
