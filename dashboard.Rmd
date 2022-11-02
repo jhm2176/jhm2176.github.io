@@ -17,11 +17,9 @@ library(plotly)
 ```{r data, include=FALSE}
 data("instacart")
 
-instacart =
-  instacart %>%
-  sample_n(500)
-
-#MAKE PLOTS FOR NON-AIR BNB DATA
+instacart = 
+  instacart %>% 
+  as_tibble(instacart)
 ```
 
 Column {data-width=650}
@@ -30,14 +28,14 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-nyc_airbnb %>%
-  mutate(
-    text_label = str_c("Price: $", price)
-    ) %>%
+instacart %>%
+  group_by(order_dow, department) %>% 
+  summarise(orders = n()) %>%
+  ungroup() %>%
   plot_ly(
-    x = ~lat, y = ~long, color = ~price,
-    type = "scatter", mode = "markers", 
-    alpha = 0.5, text = ~text_label)
+    x = ~order_dow, y = ~orders, color = ~department,
+    type = "scatter", mode = "lines+markers", colors = "viridis") %>%
+  layout(title = 'Number of products by day', xaxis = list(title = 'Day of the week'))
 ```
 
 Column {data-width=350}
@@ -46,21 +44,34 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
-nyc_airbnb %>%
-  mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>%
+instacart %>% 
+  count(department) %>% 
+  mutate(department = fct_reorder(department, n)) %>% 
   plot_ly(
-    y = ~price, color = ~neighbourhood,
-    type = "box", colors = "viridis")
+  x = ~department, y = ~n, color = ~department,
+  type = "bar", colors = "viridis") %>%
+  layout(title = 'Number of items ordered in each department')
 ```
 
 ### Chart C
 
 ```{r}
-nyc_airbnb %>%
-  count(neighbourhood) %>%
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>%
+instacart %>%
   plot_ly(
-    x = ~neighbourhood, y = ~n, color = ~neighbourhood,
-    type = "bar", colors = "viridis")
+    y = ~order_hour_of_day, color = ~department,
+    type = "box", colors = "viridis") %>%
+    layout(title = 'Hour of order by department', xaxis = list(title = 'Department'), yaxis = list(title = 'Order hour of day'))
+```
+
+### Chart D
+
+```{r}
+instacart %>% 
+  count(aisle) %>%
+  mutate(aisle = fct_reorder(aisle, n)) %>% 
+  plot_ly(
+    x = ~aisle, y = ~n,
+    type = "scatter", mode = "markers") %>%
+  layout(title = 'Number of items ordered in each aisle', xaxis = list(title = 'Aisle'), colors = "viridis")
 ```
 
