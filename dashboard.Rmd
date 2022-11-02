@@ -25,7 +25,7 @@ instacart =
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Number of orders by day
 
 ```{r}
 instacart %>%
@@ -35,13 +35,13 @@ instacart %>%
   plot_ly(
     x = ~order_dow, y = ~orders, color = ~department,
     type = "scatter", mode = "lines+markers", colors = "viridis") %>%
-  layout(title = 'Number of products by day', xaxis = list(title = 'Day of the week'))
+  layout(xaxis = list(title = 'Day of the week'))
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Number of items ordered in each department
 
 ```{r}
 instacart %>% 
@@ -49,29 +49,15 @@ instacart %>%
   mutate(department = fct_reorder(department, n)) %>% 
   plot_ly(
   x = ~department, y = ~n, color = ~department,
-  type = "bar", colors = "viridis") %>%
-  layout(title = 'Number of items ordered in each department')
+  type = "bar", colors = "viridis")
 ```
 
-### Chart C
+### Hour of order by department
 
 ```{r}
 instacart %>%
   plot_ly(
     y = ~order_hour_of_day, color = ~department,
     type = "box", colors = "viridis") %>%
-    layout(title = 'Hour of order by department', xaxis = list(title = 'Department'), yaxis = list(title = 'Order hour of day'))
+    layout(xaxis = list(title = 'Department'), yaxis = list(title = 'Order hour of day'))
 ```
-
-### Chart D
-
-```{r}
-instacart %>% 
-  count(aisle) %>%
-  mutate(aisle = fct_reorder(aisle, n)) %>% 
-  plot_ly(
-    x = ~aisle, y = ~n,
-    type = "scatter", mode = "markers") %>%
-  layout(title = 'Number of items ordered in each aisle', xaxis = list(title = 'Aisle'), colors = "viridis")
-```
-

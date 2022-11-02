@@ -18,4 +18,4 @@ Here is my professional experience.
 
 ### Resume
 
-Here is a link to my [resume] (link).
+Here is a link to my [resume] (./documents/resume.pdf).
